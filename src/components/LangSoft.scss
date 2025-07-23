@@ -1,0 +1,88 @@
+@import '../styles/variables';
+
+.languages-section {
+  display: grid;
+  row-gap: $space-sm;
+
+  .language-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    row-gap: $space-md;  // gap between each language item
+
+
+    .language-item {
+      display: grid;
+
+      .language-header {
+        display: grid;
+        grid-template-columns: 2.2cm 3cm;  // name | bar
+        column-gap: $space-sm;
+        align-items: center;
+      }
+
+      .language-name {
+        font-size: 0.95rem;
+        font-weight: $heading-weight;
+        color: $dark-gray;
+      }
+
+      .progress-bar {
+        height: 10px;
+        background-color: lighten($dark-gray, 60%);
+        // border-radius: 3px;
+        overflow: hidden;
+
+        .progress-fill {
+          height: 100%;
+          background-color: $black;
+          transition: width 0.3s ease;
+        }
+      }
+
+      .language-detail {
+        font-size: 0.85rem;
+        font-style: italic;
+        color: $dark-gray;
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .languages-section {
+    /* 1) center the whole list as a tightened inline-grid */
+    .language-list {
+      display: inline-grid !important;
+      row-gap: $space-sm !important;
+      justify-self: center !important;  // center the list block
+    }
+
+    /* 2) each item left-aligns its contents */
+    .language-item {
+      display: grid !important;
+      justify-items: start !important;  // left edge = red line
+    }
+
+    /* 3) header stacks name + bar in two rows, left-aligned */
+    .language-header {
+      grid-template-rows: auto auto !important; 
+      justify-items: start !important;    // name + bar start at left
+    }
+
+    /* force the bar back to its fixed width */
+    .language-header .progress-bar {
+      width: 3cm !important;
+      max-width: 100%;
+    }
+
+    /* detail sits directly under, left-aligned */
+    .language-detail {
+      text-align: left !important;
+      justify-self: start !important;
+    }
+  }
+}
+
+

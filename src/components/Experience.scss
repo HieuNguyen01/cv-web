@@ -1,0 +1,79 @@
+@import '../styles/variables';
+@import '../styles/section-props';
+
+.experience-section {
+  display: grid;
+  row-gap: $space-sm;
+
+  .experience-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    row-gap: $space-md;
+
+    .experience-item {
+      display: grid;
+      grid-template-columns: 8rem 1fr;
+      column-gap: $space-md;
+      row-gap: $space-sm;
+      
+      .experience-meta {
+        display: grid;
+        // row-gap: $space-sm;
+
+        .company {
+          font-size: 0.95rem;
+          font-weight: $heading-weight;
+          color: $black;
+        }
+
+        .location,
+        .timeframe {
+          font-size: 0.85rem;
+          color: $dark-gray;
+        }
+      }
+
+      .experience-info {
+        display: grid;
+        // row-gap: $space-sm;
+
+        .role {
+          display: flex;
+          gap: 0.4rem;
+        }
+
+        .role-title {
+          font-size: 0.9rem;
+          font-weight: $heading-weight;
+          color: $black;
+        }
+
+        .role-type {
+          font-size: 0.85rem;
+          font-style: italic;
+          color: $dark-gray;
+        }
+
+        /* No list-style here—just blocks */
+        .details {
+          display: grid;
+          row-gap: $space-sm;
+          font-size: 0.85rem;
+          color: $dark-gray;
+
+          .detail {
+            /* inherits font-size & color */
+            
+            /* highlighted spans inside */
+            span.highlight {
+              font-weight: $heading-weight;
+              color: $black;
+            }
+          }
+        }
+      }
+    }
+  }
+}

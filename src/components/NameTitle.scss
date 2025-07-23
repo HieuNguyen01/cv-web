@@ -1,0 +1,109 @@
+@import '../styles/variables';
+
+.name-title-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $space-sm;
+  padding-top: 2rem;      
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+
+  /* MOBILE: center everything + slot into grid */
+  @media (max-width: 700px) {
+    align-items: center;
+    text-align: center;
+    grid-area: name-title;
+  }
+
+  /* TOP & BOTTOM DECOR LINES */
+  .decor-line-section-name {
+    position: relative;
+    width: 100%;
+    height: 3px;
+    box-sizing: border-box;
+
+    &.bot {
+      margin-top: auto;
+    }
+
+    .decor-line-sm {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $dark-gray;
+      transform: translateY(-50%);
+      z-index: 0;
+    }
+  }
+
+  /* NAME TEXT */
+  .name-text {
+    display: flex;
+    flex-direction: column;    // default: two lines
+    align-items: flex-start;
+    row-gap: 0.25rem;
+
+    .name-first {
+      font-size: 4rem;
+      text-transform: uppercase;
+      // font-family: 'Open Sans';
+    }
+
+    .name-last {
+      font-size: 4rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-top: -30px;      // overlap on desktop/tablet
+    }
+  }
+
+  /* JOB TITLE */
+  .title-text {
+    font-size: 2rem;
+    font-weight: 500;
+    font-style: italic;
+    text-transform: uppercase;
+    color: gray;
+    // opacity: 30%;
+
+    /* MOBILE: ensure it's centered under the name */
+    // @media (max-width: 600px) {
+    //   width: 100%;
+    // }
+  }
+}
+
+/* —— MOBILE NAME LAYOUT OVERRIDES —— */
+@media (max-width: 700px) {
+  .name-title-section .name-text {
+    flex-direction: row;       // join first+last on one line
+    align-items: baseline;
+    gap: $space-sm;
+
+    .name-last {
+      margin-top: 0;           // cancel desktop overlap
+    }
+  }
+}
+
+/* —— NARROW PHONES: STACK NAMES AGAIN UNDER 450px —— */
+@media (max-width: 450px) {
+  .name-title-section {
+    align-items: center;       // keep section centered
+    text-align: center;
+  }
+
+  .name-title-section .name-text {
+    flex-direction: column;    // force two lines
+    align-items: center;
+    row-gap: 0.25rem;
+
+    .name-last {
+      margin-top: 0;           // no negative margin
+    }
+  }
+}

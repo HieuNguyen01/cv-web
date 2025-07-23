@@ -1,0 +1,45 @@
+@import '../styles/variables';
+@import '../styles/section-props';
+
+.projects-section {
+  display: grid;
+  row-gap: $space-sm;
+
+  .projects-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    row-gap: 0.5rem;
+
+    .project-item {
+      display: grid;
+      // two-column: narrow name + flexible details
+      grid-template-columns: 3.5cm 1fr;
+      column-gap: $space-md;
+      row-gap: $space-sm;
+
+      .project-meta {
+        .project-name {
+          font-size: 0.95rem;
+          font-weight: $heading-weight;
+          color: $black;
+        }
+      }
+
+      .project-details {
+        display: grid;
+        row-gap: $space-sm;
+        font-size: 0.85rem;
+        color: $dark-gray;
+
+        .detail {
+          span.highlight {
+            font-weight: $heading-weight;
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+}

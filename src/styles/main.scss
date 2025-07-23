@@ -1,0 +1,159 @@
+@import 'variables';
+@import 'section-props';
+
+.cv-wrapper {
+  padding: 0 1.6rem;
+  box-sizing: border-box;
+  /* remove overflow-x:hidden here */
+}
+
+body {
+  font-family: $font-base;
+  font-weight: $body-weight;
+  color: $dark-gray;
+  margin: 0;
+  background: #fff;
+}
+
+/* TWO-COLUMN LAYOUT above 600px */
+.cv-two-col {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  column-gap: 3rem;
+  align-items: start;
+  /* remove overflow-x:hidden here */
+}
+
+/* both columns respect container width */
+.left-col{
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+  overflow-wrap: break-word;
+  // padding-bottom: 2rem;;
+}
+
+/* DESKTOP & TABLET */
+@media (min-width: 700px) {
+  .left-col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* apply spacing only to the 3rd+ items */
+  .left-col > *:not(:first-child):not(:nth-child(2)) {
+    margin-top: 5rem;
+  }
+}
+
+/* MOBILE (single-column) */
+@media (max-width: 700px) {
+  .left-col {
+    display: contents;  // revert for your grid‐reorder
+  }
+}
+
+
+.right-col {
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+/* ------------------------------ */
+/* (desktop & tablet) */
+.profile-image-section,
+.name-title-section,
+.profile-section,
+.education-section,
+.experience-section,
+.skills-section,
+.projects-section,
+.languages-section,
+.software-section,
+.hobbies-section{
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  justify-self: stretch;
+}
+
+.footer {
+  position: relative; 
+  left: 50%;               
+  transform: translateX(-50%);
+  width: 100vw;            // full browser width
+  height: 40px;
+  background-color: rgb(51, 51, 51);
+  box-sizing: border-box;
+  margin-top: 1.6rem;      // optional spacing above footer
+  z-index: 1;              // keep on top if needed
+}
+
+/* ------------------------------ */
+/* MOBILE SINGLE‐COLUMN REORDER */
+@media (max-width: 700px) {
+  .cv-two-col {
+    gap: 0.5rem;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    grid-template-areas:
+      "profile-image"
+      "name-title"
+      "profile"
+      "education"
+      "experience"
+      "skills"
+      "projects"
+      "languages"
+      "software"
+      "hobbies"
+      "footer";
+  }
+
+  .left-col,
+  .right-col {
+    display: contents;
+  }
+
+  /* assign areas only (width already 100% above) */
+  .profile-image-section { grid-area: profile-image; }
+  .name-title-section    { grid-area: name-title; }
+  .profile-section       { grid-area: profile; }
+  .education-section     { grid-area: education; }
+  .experience-section    { grid-area: experience; }
+  .skills-section        { grid-area: skills; }
+  .projects-section      { grid-area: projects; }
+  .languages-section     { grid-area: languages; }
+  .software-section      { grid-area: software; }
+  .hobbies-section       { grid-area: hobbies; }
+  .footer                { grid-area: footer; }
+}
+
+/* —— NARROW PHONES: under 400px —— */
+@media (max-width: 400px) {
+  /* tighten up your outer padding so 100% children really fit */
+  .cv-wrapper {
+    padding: 0 1rem;
+  }
+
+  /* reduce the gap between rows to save horizontal space */
+  .cv-two-col {
+    gap: 0.5rem;           // or use $space-xs if you have it
+    min-width: 0;          // allow children to shrink/word-wrap
+  }
+
+  /* force every section wrapper to obey the column width */
+  .cv-two-col > * {
+    min-width: 0;          // make sure nothing forces it wider
+  }
+
+  /* your footer was set to 100vw — override that here */
+  .footer {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+  }
+}
+

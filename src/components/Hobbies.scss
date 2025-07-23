@@ -1,0 +1,22 @@
+  @import '../styles/variables';
+  .hobbies-content {
+    /* your icons or text go here, e.g.: */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;  // centers all .hobby items in the row
+    gap: 2rem;
+
+    .hobby {
+      display: block;
+      flex-direction: column;    // stack icon + label
+      align-items: center;       // center children (icon and text)
+      text-align: center;
+    }
+  }
+
+  .hobby-icon {
+  display: block;            // allow margin auto
+  margin: 0 auto $space-sm;  // auto-center horizontally + bottom gap
+//   width: 1cm;
+//   height: 1cm;
+}

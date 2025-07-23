@@ -1,0 +1,36 @@
+@import '../styles/variables';
+
+.profile-image-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding-bottom: 2rem;
+
+  @media (max-width: 600px) {
+    /* only job is to declare its area */
+    grid-area: profile-image;
+  }
+}
+
+.decor-rectangle {
+  width: 100%;
+  height: 40px;
+  background-color: rgb(51, 51, 51);
+  box-sizing: border-box;
+}
+
+.profile-image {
+  width: 220px;
+  height: 220px;
+  max-width: 100%;
+  border: 3px solid $black;
+  border-radius: 50%;
+  object-fit: cover;
+  image-rendering: optimizeQuality;
+
+  @media (max-width: 300px) {
+    width: 100%;
+    height: auto;
+  }
+}

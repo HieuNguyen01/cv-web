@@ -1,0 +1,61 @@
+// ProfileSection.scss
+@import '../styles/variables';
+@import '../styles/section-props';
+
+.profile-section {
+  // stack label → deco → intro → deco → list with small gaps
+  display: grid;
+  row-gap: $space-sm;
+
+  .intro {
+    margin-left: 5px;
+    margin-right: 5px;
+    line-height: 1.4;
+    font-size: 1rem;
+    text-align: justify;
+    font-style: italic;
+    color: gray;
+  }
+
+  // repeat the horizontal rule
+  .decor-line-sm {
+    width: 100%;
+    height: 1px;
+    background-color: $dark-gray;
+  }
+
+  .contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-self: center;
+    text-align: center;
+
+    li {
+      margin-top: $space-sm;   // gap between each pair
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    /* make each label/detail its own line */
+    .contact-label,
+    .contact-detail {
+      display: block;
+      width: 100%;
+    }
+
+    .contact-label {
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: $space-sm;
+    }
+
+    .contact-detail {
+      font-style: italic;
+      font-size: 0.9rem;
+      color: $dark-gray;
+      margin-bottom: $space-md;  // extra space before next label
+    }
+  }
+}

@@ -1,0 +1,31 @@
+// src/components/SkillsSection.scss
+@import '../styles/variables';
+@import '../styles/section-props';
+
+.skills-section {
+  display: grid;
+  row-gap: $space-sm;
+
+  .skills-list {
+    display: grid;
+    row-gap: $space-md;
+  }
+
+  .skill-item {
+    display: grid;
+    // row-gap: $space-sm;
+
+    .skill-title {
+      font-size: 0.9rem;
+      font-weight: $heading-weight;
+      color: $black;
+      text-transform: uppercase;
+    }
+
+    .skill-detail {
+      font-size: 0.85rem;
+      color: $dark-gray;
+      line-height: 1.4;
+    }
+  }
+}

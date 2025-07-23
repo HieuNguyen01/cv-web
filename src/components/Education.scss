@@ -1,0 +1,76 @@
+@import '../styles/variables';
+@import '../styles/section-props';
+
+.education-section {
+  display: grid;
+  row-gap: $space-sm;
+
+  .education-list {
+    // list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    row-gap: 1rem;
+
+    .education-item {
+      display: grid;
+      grid-template-columns: minmax(0, 3.5cm) minmax(0, 1fr);
+      column-gap: $space-md;
+      // row-gap: $space-sm;
+      // padding-bottom: 10px;
+      // overflow-wrap: break-word;
+      min-width: 0;
+      width: 100%;
+      box-sizing: border-box;
+
+      .education-meta {
+        display: grid;
+        min-width: 0;
+        // row-gap: $space-sm;
+
+        .institution {
+          font-size: 0.95rem;
+          font-weight: $heading-weight;
+          color: $black;
+        }
+
+        .location,
+        .year {
+          font-size: 0.85rem;
+          color: $dark-gray;
+        }
+      }
+
+      .education-info {
+        display: grid;
+        min-width: 0;
+        // row-gap: $space-sm;
+
+        .program {
+          font-size: 0.9rem;
+          font-weight: $heading-weight;
+          color: $black;
+        }
+
+        .degree {
+          font-size: 0.85rem;
+          font-style: italic;
+          color: $dark-gray;
+        }
+
+        .modules {
+          font-size: 0.85rem;
+          color: $dark-gray;
+          overflow-wrap: break-word;
+        }
+        
+        .sup {
+          font-size: 0.75em;
+          vertical-align: super;
+        }
+      }
+    }
+  }
+}
