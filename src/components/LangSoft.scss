@@ -17,7 +17,7 @@
 
       .language-header {
         display: grid;
-        grid-template-columns: 2.2cm 3cm;  // name | bar
+        grid-template-columns: 1fr 2fr;  // name | bar
         column-gap: $space-sm;
         align-items: center;
       }

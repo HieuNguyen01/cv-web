@@ -15,7 +15,7 @@
     .project-item {
       display: grid;
       // two-column: narrow name + flexible details
-      grid-template-columns: 3.5cm 1fr;
+      grid-template-columns: 0.5fr 2fr;
       column-gap: $space-md;
       row-gap: $space-sm;
 

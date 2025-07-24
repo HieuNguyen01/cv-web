@@ -18,7 +18,7 @@ body {
 /* TWO-COLUMN LAYOUT above 600px */
 .cv-two-col {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 2fr);
   column-gap: 3rem;
   align-items: start;
   /* remove overflow-x:hidden here */
@@ -42,7 +42,7 @@ body {
 
   /* apply spacing only to the 3rd+ items */
   .left-col > *:not(:first-child):not(:nth-child(2)) {
-    margin-top: 5rem;
+    margin-top: 6.6rem;
   }
 }
 

@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: $space-sm;
-  padding-top: 2rem;      
+  padding-top: 1.2rem;      
   width: 100%;
   box-sizing: border-box;
   text-align: left;
@@ -20,7 +20,7 @@
   /* TOP & BOTTOM DECOR LINES */
   .decor-line-section-name {
     position: relative;
-    width: 100%;
+    width: 70%;
     height: 3px;
     box-sizing: border-box;
 
@@ -80,8 +80,8 @@
 /* —— MOBILE NAME LAYOUT OVERRIDES —— */
 @media (max-width: 700px) {
   .name-title-section .name-text {
-    flex-direction: row;       // join first+last on one line
-    align-items: baseline;
+    flex-direction: column;       // join first+last on one line
+    align-items: center;
     gap: $space-sm;
 
     .name-last {

@@ -16,7 +16,7 @@
 
     .education-item {
       display: grid;
-      grid-template-columns: minmax(0, 3.5cm) minmax(0, 1fr);
+      grid-template-columns: 0.5fr 2fr;
       column-gap: $space-md;
       // row-gap: $space-sm;
       // padding-bottom: 10px;
